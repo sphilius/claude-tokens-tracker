@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Tokens Tracker",
+  "version": "0.1.0",
+  "description": "Local, private context-token count + exact session/weekly usage and cache timer on claude.ai.",
+  "host_permissions": ["https://claude.ai/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ],
+  "action": {
+    "default_title": "Claude Tokens Tracker",
+    "default_popup": "popup.html"
+  }
+}

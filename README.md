@@ -58,12 +58,23 @@ adapters/userscript/      Thin userscript surface (DOM panel + bootstrap)
 adapters/mcp/             MCP companion server (Claude Desktop / agents)
   server.js               Tools: estimate_tokens/cost, context_budget, usage
   claude-code-usage.js    Per-project Claude Code spend from ~/.claude logs
+extension/                MV3 desktop extension (Chrome/Edge)
+  manifest.json           MAIN-world content script, claude.ai-only
+  content.js              Built bundle (same adapter as the userscript)
+  popup.html              Toolbar popup
 build/build-userscript.mjs  esbuild bundler → dist/*.user.js
+build/build-extension.mjs   esbuild bundler → extension/content.js
 dist/                     Checked-in built userscript (installable)
 ```
 
 Delivery surfaces, by status: **userscript** (v0.1, lead) → **MCP companion**
-(v0.1, `adapters/mcp/`) → **MV3 extension** (planned). No Skill is planned.
+(v0.1, `adapters/mcp/`) → **MV3 extension** (v0.1, `extension/`). No Skill is
+planned. All three share `src/core` — the extension's content script is the
+same adapter as the userscript, bundled for a MAIN-world content script.
+
+### Install (MV3 extension, desktop)
+`chrome://extensions` → enable Developer mode → **Load unpacked** → select the
+`extension/` folder. Open claude.ai; the panel appears bottom-right.
 
 ## Build from source
 
