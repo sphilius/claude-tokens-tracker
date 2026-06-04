@@ -8,13 +8,14 @@
 // @run-at       document-idle
 // @grant        none
 // @noframes
+// @require      https://cdn.jsdelivr.net/npm/gpt-tokenizer@2/dist/o200k_base.js
 // @license      MIT
 // @homepageURL  https://github.com/sphilius/claude-tokens-tracker
 // @supportURL   https://github.com/sphilius/claude-tokens-tracker/issues
 // ==/UserScript==
 //
-// For EXACT o200k token counting (instead of the built-in heuristic), add this
-// line to the metadata block above — it loads the MIT gpt-tokenizer at install
-// time (a one-off CDN fetch, not runtime telemetry):
-//   // @require https://cdn.jsdelivr.net/npm/gpt-tokenizer@2/dist/o200k_base.js
+// The @require above loads the MIT gpt-tokenizer once at install time for EXACT
+// o200k token counts (a one-off CDN fetch, not runtime telemetry). Delete that
+// line if you prefer zero external loads — the tool falls back to a built-in
+// heuristic and still works fully offline.
 //
