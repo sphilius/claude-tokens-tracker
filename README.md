@@ -55,9 +55,15 @@ src/core/                 Shared, framework-agnostic library (no DOM/UI)
 adapters/userscript/      Thin userscript surface (DOM panel + bootstrap)
   main.js                 Imports core, renders the panel
   header.txt              ==UserScript== metadata
+adapters/mcp/             MCP companion server (Claude Desktop / agents)
+  server.js               Tools: estimate_tokens/cost, context_budget, usage
+  claude-code-usage.js    Per-project Claude Code spend from ~/.claude logs
 build/build-userscript.mjs  esbuild bundler → dist/*.user.js
 dist/                     Checked-in built userscript (installable)
 ```
+
+Delivery surfaces, by status: **userscript** (v0.1, lead) → **MCP companion**
+(v0.1, `adapters/mcp/`) → **MV3 extension** (planned). No Skill is planned.
 
 ## Build from source
 

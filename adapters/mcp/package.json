@@ -1,0 +1,21 @@
+{
+  "name": "claude-tokens-tracker-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP companion for claude-tokens-tracker: token/cost estimation, account usage, and Claude Code per-project spend.",
+  "license": "MIT",
+  "bin": {
+    "claude-tokens-tracker-mcp": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "optionalDependencies": {
+    "gpt-tokenizer": "^2.8.0"
+  }
+}
