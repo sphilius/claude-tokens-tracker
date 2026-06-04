@@ -1,0 +1,18 @@
+{
+  "name": "claude-tokens-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local, private Claude token/usage tracker — shared core + userscript (MV3 extension and MCP companion to follow).",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build:userscript": "node build/build-userscript.mjs",
+    "build": "npm run build:userscript"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.0"
+  },
+  "exports": {
+    "./core": "./src/core/index.js"
+  }
+}

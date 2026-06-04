@@ -1,0 +1,20 @@
+// ==UserScript==
+// @name         Claude Tokens Tracker
+// @namespace    https://github.com/sphilius/claude-tokens-tracker
+// @version      0.1.0
+// @description  Local, private context-token count + exact session/weekly usage and cache timer on claude.ai. Works on desktop and Android (via a userscript-capable browser).
+// @author       sphilius
+// @match        https://claude.ai/*
+// @run-at       document-idle
+// @grant        none
+// @noframes
+// @license      MIT
+// @homepageURL  https://github.com/sphilius/claude-tokens-tracker
+// @supportURL   https://github.com/sphilius/claude-tokens-tracker/issues
+// ==/UserScript==
+//
+// For EXACT o200k token counting (instead of the built-in heuristic), add this
+// line to the metadata block above — it loads the MIT gpt-tokenizer at install
+// time (a one-off CDN fetch, not runtime telemetry):
+//   // @require https://cdn.jsdelivr.net/npm/gpt-tokenizer@2/dist/o200k_base.js
+//
