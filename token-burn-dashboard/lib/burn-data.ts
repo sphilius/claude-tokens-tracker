@@ -1,11 +1,10 @@
 import { formatTokens } from "./token-math";
 
 // Three-lane data model.
-// EXACT = measured token logs only (Codex, Claude Code, API).
+// EXACT = measured token logs only (Claude Code, API; Codex unused in this build).
 // ACTIVITY = measured counts from chat exports (NOT tokens).
 // ESTIMATE = an optional token band, never a point value.
 export const exactColumns = [
-  { key: "codex_tokens", label: "Codex", source: "codex" },
   { key: "claude_code_tokens", label: "Claude Code", source: "claude_code" },
   { key: "api_tokens", label: "API usage", source: "api" },
 ] as const;

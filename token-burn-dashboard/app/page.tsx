@@ -2,7 +2,9 @@
 
 import { useMemo, useState } from "react";
 
-import rawRows from "../data/daily-burn.sample.json";
+// Active dataset the app renders. Starts as a copy of the sample so the app
+// builds out of the box; replace with your scrubbed real rows (see README).
+import rawRows from "../data/daily-burn.json";
 import {
   exactColumns,
   estimateBand,
@@ -246,8 +248,8 @@ export default function TokenBurnDashboard() {
             <div className="sourceGrid">
               <Metric label="Exact tokens" value={formatTokens(today.exact)} note="measured" />
               <Metric label="Conversations" value={`${today.convos}`} note="measured" />
-              <Metric label="Codex" value={formatTokens(today.codex)} note="exact" />
               <Metric label="Claude Code" value={formatTokens(today.claudeCode)} note="exact" />
+              <Metric label="API" value={formatTokens(today.api)} note="exact" />
             </div>
           ) : (
             <EmptyExact />
@@ -270,8 +272,8 @@ export default function TokenBurnDashboard() {
                 <th>Date</th>
                 <th>Exact total</th>
                 <th>7d avg</th>
-                <th>Codex</th>
                 <th>Claude Code</th>
+                <th>API</th>
                 <th>Convos</th>
                 <th>Messages</th>
                 <th>Chat est.</th>
@@ -293,8 +295,8 @@ export default function TokenBurnDashboard() {
                       <span className="pill exact">{formatTokens(row.exact_total)}</span>
                     </td>
                     <td>{formatTokens(movingAverage7(selectedRows, originalIndex))}</td>
-                    <td>{formatTokens(row.codex_tokens)}</td>
                     <td>{formatTokens(row.claude_code_tokens)}</td>
+                    <td>{formatTokens(row.api_tokens)}</td>
                     <td>{row.chatgpt_conversations + row.claude_chat_conversations}</td>
                     <td>{row.chatgpt_messages + row.claude_chat_messages}</td>
                     <td>
