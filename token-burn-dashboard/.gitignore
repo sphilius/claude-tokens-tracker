@@ -8,4 +8,8 @@ next-env.d.ts
 data/daily-burn.local.json
 data/*.private.json
 
+# static export output
+out/
+
+# Vercel
 .vercel

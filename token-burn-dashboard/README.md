@@ -89,15 +89,15 @@ day, then re-run step 3. Refresh the browser.
 
 ## Deploy (only after scrubbing)
 `data/daily-burn.json` is the only data that ships. Confirm it's scrubbed
-(generic evidence, no private fields), then:
+(generic evidence, no private fields), then build the static site:
 
 ```bash
-npm run build && npm run start     # self-host on your own box
+npm run build      # static export is enabled -> emits a portable out/ folder
 ```
 
-For static hosting (GitHub Pages / Netlify), add `output: "export"` to
-`next.config.ts` and `npm run build` emits a static `out/` folder. **Do not
-deploy until you've eyeballed `data/daily-burn.json`.**
+`out/` is a plain static site — host it anywhere (GitHub Pages, Netlify, S3) or
+preview locally with `npx serve out`. **Do not deploy until you've eyeballed
+`data/daily-burn.json`.**
 
 ## Privacy guarantees
 - `data/daily-burn.local.json` and `*.private.json` are git-ignored.
