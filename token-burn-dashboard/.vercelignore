@@ -1,0 +1,8 @@
+# Only the app + the scrubbed public data should be deployed.
+# Keep the private working file, collectors, and kit docs off the host.
+data/daily-burn.local.json
+data/*.private.json
+data/daily-burn.sample.json
+scripts/
+kit-docs/
+README.md

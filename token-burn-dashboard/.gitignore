@@ -1,0 +1,15 @@
+# dependencies / build
+node_modules/
+.next/
+next-env.d.ts
+*.tsbuildinfo
+
+# PRIVATE working data — never commit/deploy. Keep raw, unscrubbed rows here.
+data/daily-burn.local.json
+data/*.private.json
+
+# static export output
+out/
+
+# Vercel
+.vercel
